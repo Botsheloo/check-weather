@@ -9,3 +9,6 @@ body {
   padding: 30px;
   box-shadow: 0 30px 50px #41326414;
 }
+h1 {
+  font-family: "Oswald", sans-serif;
+}
