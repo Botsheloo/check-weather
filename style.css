@@ -2,13 +2,30 @@ body {
   background-color: #f9f7fe;
 }
 .weather-app {
-  background-color: white;
+  padding: 30px;
   max-width: 600px;
   margin: 45px auto;
   border-radius: 16px;
-  padding: 30px;
+  background-color: white;
   box-shadow: 0 30px 50px #41326414;
 }
 h1 {
   font-family: "Playfair Display", serif;
+}
+.search-form-input {
+  width: 80%;
+  border: none;
+  font-size: 16px;
+  padding: 15px 20px;
+  border-radius: 6px;
+  background-color: #f9f7fe;
+}
+.search-form-button {
+  border: none;
+  color: white;
+  font-size: 16px;
+  margin-left: 10px;
+  padding: 15px 20px;
+  border-radius: 6px;
+  background-color: #885df1;
 }
