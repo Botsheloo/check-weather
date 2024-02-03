@@ -18,3 +18,4 @@ function citySearch(event){
 }
 let searchForm = document.querySelector(".search-form");
 searchForm.addEventListener("submit", citySearch);
+searchCity("Paris");
