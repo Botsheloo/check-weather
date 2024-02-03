@@ -1,9 +1,24 @@
 function refreshWeather(response){
-  let temperature = document.querySelector(".temperature");
-  temperature.innerHTML = Math.round(response.data.temperature.current);
-  let h1 = document.querySelector("h1");
-  h1.innerHTML = response.data.city;
+  let temperatureElement = document.querySelector(".temperature");
+  let h1Element = document.querySelector("h1");
+  let conditionElement = document.querySelector(".condition");
+  let windElement = document.querySelector(".wind");
+  let humidityElement = document.querySelector(".humidity");
+  let timeElement = document.querySelector(".time");
+  let date = new Date(response.data.time * 1000);
+  let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+  let minutes = date.getMinutes();
 
+  if (minutes < 10){
+    minutes = `0${minutes}`;
+  }
+
+  temperatureElement.innerHTML = Math.round(response.data.temperature.current);
+  h1Element.innerHTML = response.data.city;
+  conditionElement.innerHTML = response.data.condition.description;
+  windElement.innerHTML = response.data.wind.speed;
+  humidityElement.innerHTML = response.data.temperature.humidity;
+  timeElement.innerHTML = `${days[date.getDay()]} ${date.getHours()}:${minutes}`;
 }
 function searchCity(city){
   //make api call and update the interface
@@ -18,4 +33,4 @@ function citySearch(event){
 }
 let searchForm = document.querySelector(".search-form");
 searchForm.addEventListener("submit", citySearch);
-searchCity("Paris");
+searchCity("Seoul");
