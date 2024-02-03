@@ -21,6 +21,8 @@ function refreshWeather(response){
   windElement.innerHTML = response.data.wind.speed;
   humidityElement.innerHTML = response.data.temperature.humidity;
   timeElement.innerHTML = `${days[date.getDay()]} ${date.getHours()}:${minutes}`;
+
+  getForecast(response.data.city);
 }
 function searchCity(city){
   //make api call and update the interface
@@ -34,7 +36,14 @@ function citySearch(event){
     searchCity(searchEngine.value);
 }
 
-function displayForecast(){
+function getForecast(city){
+  let apiKey = "o2e4e95f318btbd0334afc45b9074ea8";
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayForecast);
+
+}
+
+function displayForecast(response){
   let days = ["Tue", "Wed", "Thu", "Fri", "Sat"];
   let forecastHtml = "";
   
@@ -43,11 +52,11 @@ function displayForecast(){
     <div class="weather-forest-day">
     <div class="weather-forecast-date">${day}</div>
     <div class="weather-forecast-icon">⛅</div>
-    <div class="weather-forecast=temperatures">
-    <div class="weather-forecast-temperature">
+    <div class="weather-forecast-temperatures">
+    <span class="weather-forecast-temperature">
     <strong>15°</strong>
-    </div>
-    <div class="weather-forecast-temperature">9°</div>
+    </span>
+    <span class="weather-forecast-temperature">9°</span>
     </div>
     </div>
     `;
@@ -59,4 +68,3 @@ function displayForecast(){
 let searchForm = document.querySelector(".search-form");
 searchForm.addEventListener("submit", citySearch);
 searchCity("Seoul");
-displayForecast();
