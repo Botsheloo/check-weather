@@ -17,28 +17,20 @@ strong {
   color: red;
 }
 .visible-temperature {
-  position: relative;
-  align-items: center;
-  margin-top: 30px;
+  display: flex;
 }
 .emoji {
-  position: relative;
-  font-size: 40px;
-  margin-top: 22px;
-  top: -10px;
+  height: 88px;
+  width: 88px;
 }
 .temperature {
-  line-height: 1;
-  font-size: 80px;
+  font-size: 88px;
   font-weight: 700;
-  margin-left: 5px;
 }
 .degrees {
-  top: -34px;
-  line-height: 1;
+  margin-top: 10px;
   font-size: 28px;
   font-weight: 400;
-  position: relative;
 }
 .weather-app {
   padding: 30px;

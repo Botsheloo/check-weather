@@ -5,14 +5,16 @@ function refreshWeather(response){
   let windElement = document.querySelector(".wind");
   let humidityElement = document.querySelector(".humidity");
   let timeElement = document.querySelector(".time");
+  let iconElement = document.querySelector(".emoji");
   let date = new Date(response.data.time * 1000);
   let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
   let minutes = date.getMinutes();
-
+  console.log(response.data);
   if (minutes < 10){
     minutes = `0${minutes}`;
   }
 
+  iconElement.innerHTML =`<img src="${response.data.condition.icon_url}" class="emoji" />`;
   temperatureElement.innerHTML = Math.round(response.data.temperature.current);
   h1Element.innerHTML = response.data.city;
   conditionElement.innerHTML = response.data.condition.description;
