@@ -68,6 +68,25 @@ main {
   display: flex;
   justify-content: space-between;
 }
+.weather-forecast {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.weather-date {
+  font-size: 20px;
+  color: #27214266;
+}
+.weather-temperatures {
+  font-size: 18px;
+  font-weight: 700;
+}
+.weather-maximum {
+  color: #f65282;
+}
+.weather-minimum {
+  color: #f3799e;
+}
+
 footer {
   text-align: center;
   padding: 30px 0 0 0;
